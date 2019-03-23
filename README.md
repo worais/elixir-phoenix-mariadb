@@ -1,4 +1,4 @@
-# elixir-phoenix-mariadb
+# Elixir Phoenix MariaDB
 
 ### Setting up your Phoenix project:
 From your project directory, run a command to initalize the project:

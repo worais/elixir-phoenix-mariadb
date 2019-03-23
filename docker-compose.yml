@@ -1,0 +1,23 @@
+version: '2'
+services:
+  db:
+    image: mariadb:10.2.15
+    restart: always
+    volumes:
+      - "./data:/var/lib/mysql"
+    env_file:
+      - secret.env      
+    ports:
+      - "3306:3306"
+  web:   
+    build: .
+    restart: always    
+    command: "mix phx.server"
+    volumes:
+      - ./app:/app
+    env_file:
+      - secret.env         
+    ports:
+      - "4000:4000"
+    depends_on:
+      - db   
